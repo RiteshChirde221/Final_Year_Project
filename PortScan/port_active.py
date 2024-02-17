@@ -7,7 +7,9 @@ er_prt=91
 def Scanner(ip,port):
     scanner=PortScanner()
     res=scanner.scan(ip,port)
-    return print(res['scan'][ip]['tcp'])
+    scan_res=res['scan'][ip]['tcp']
+    port_res=scan_res[int(port)]['state']
+    return print(port_res)
 
 def Specified_Scanner():
     for port in prt:
@@ -19,3 +21,4 @@ def Range_Scanner():
 if __name__=="__main__":
     # Specified_Scanner()
     Range_Scanner()
+ 
