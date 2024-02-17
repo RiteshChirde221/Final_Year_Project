@@ -8,7 +8,15 @@ def Scanner(ip,port):
     scanner=PortScanner()
     res=scanner.scan(ip,port)
     scan_res=res['scan'][ip]['tcp']
-    return print(scan_res)
+    serv_state=scan_res[int(port)]['state']
+    serv_name=scan_res[int(port)]['name']
+    serv_product=scan_res[int(port)]['product']
+    serv_version=scan_res[int(port)]['version']
+    serv_extrainfo=scan_res[int(port)]['extrainfo']
+    serv_cpe=scan_res[int(port)]['cpe']
+    return print('Port: ',port,'State: ',serv_state,'Name: ',serv_name,
+            'Product: ',serv_product,'Version: ',serv_version,
+            'ExtraInfo: ',serv_extrainfo,'CPE: ',serv_cpe)
 
 def Specified_Scanner():
     for port in prt:
