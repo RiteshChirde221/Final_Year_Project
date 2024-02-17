@@ -1,0 +1,25 @@
+whois done
+dnslookup done
+geoloc done
+Subdomains:
+    ctr.sh
+    censys
+    netcraft
+port scan:
+    Shodan api Paid
+    BinaryEdge done
+Service Discovery:
+    builtwith
+    wappalyzer
+
+                         'baidu': BaiduEnum,
+                         'yahoo': YahooEnum,
+                         'google': GoogleEnum,
+                         'bing': BingEnum,
+                         'ask': AskEnum,
+                         'netcraft': NetcraftEnum,
+                         'dnsdumpster': DNSdumpster,
+                         'virustotal': Virustotal,
+                         'threatcrowd': ThreatCrowd,
+                         'ssl': CrtSearch,
+                         'passivedns': PassiveDNS   

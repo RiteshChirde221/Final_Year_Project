@@ -1,0 +1,52 @@
+.ms-5{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.background-color{
+    background-color: #2D3250 !important;
+}
+.body-backgroud-colour {
+    background-color: #59B4C3;
+}
+.text-colour {
+    color: #FFFFFF !important;
+}
+.width {
+    width: 40%;
+    
+}
+.btn-warning 
+{
+    background-color: #FFDB58!important;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+.spacing {
+    word-spacing: 10px;
+}
+.btn-resolution 
+{
+    width: 50%;
+    height: 50%;
+}
+.font {
+    font-size: 19px;
+}
+.font-header {
+    font-size : 50px;
+}
+
+.content {
+    justify-content: flex-end;
+}
+.img-fluid {
+    width: 100%;
+}
+.img-size{
+    width: 100%;
+}
+.border-none {
+    border: none!important;
+}
