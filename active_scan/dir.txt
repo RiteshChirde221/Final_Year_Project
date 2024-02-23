@@ -3,3 +3,5 @@
 /login.php
 /signup.html
 /signup.php
+/index.html
+/justify.html

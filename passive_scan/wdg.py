@@ -7,15 +7,11 @@ import socket
 def whois_inp(domain):
     w= whois.whois(domain)
     #Whois Data List
-    wi_dl=[w.domain_name, w.registrar, w.updated_date,
-           w.creation_date, w.expiration_date,
-           w.name_servers, w.email, w.organization, 
-           w.city, w.state, w.country]
-    for i in wi_dl:
-        if i is None:
-            pass
-        else:
-            print(i)
+    wi_dl=["Whois Details: ","Domain: {}".format('  '.join(map(str,w.domain_name))),"Registrar: {}".format(w.registrar),
+           "Name Servers: {}".format('  '.join(map(str,w.name_servers))),"Email: {}".format(w.email),"Oraganization: {}".format(w.organization), 
+           "City: {}".format(w.city),"State: {}".format(w.state),"Country: {}".format(w.country)]
+    return '\n'+' \n'.join(map(str,wi_dl))
+# print(whois_inp('google.com'))
 
 #DNS Lookup
 def dns_info(domain):
@@ -41,14 +37,4 @@ def dns_info(domain):
     except None:
         di_dl.append('Not Found')
     
-    for i in di_dl:
-        print(i)
-
-#GeoLocation Lookup
-def geoloc(domain):
-    r=requests.get("https://geolocation-db.com/json/"+socket.gethostbyname(domain))
-    res=r.json()
-    # Geo location data list
-    gl_dl=[res['country_name'], res['latitude'], res['longitude'],
-           res['city'], res['state'], res['postal']]
-    return print('{}\n{}\n{}\n{}\n{}\n{}'.format(*gl_dl))  #print the lisst as string
+    return ' \n'.join(di_dl)

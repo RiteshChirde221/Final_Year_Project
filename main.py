@@ -1,12 +1,30 @@
-from wdg import *
-from directory_enum import direnum
-from Subdomain_enum import active
-from Subdomain_enum import passive
+from active_scan import port_scanning_active,directory_enumeration,service_discovery_active,subdomain_enumeration_active
+from passive_scan import port_passive, pserv, wdg
+from extra_tool import *
+import socket
 
-# active.brute_subd('https://www.google.com')
-# dns_info('google.com')
-# whois_inp('google.com')
-# geoloc('google.com')
-# direnum('http://127.0.0.1:90/') #Needs URL
 
-passive.pas_subd('google.com')
+def active(domain,url):
+    ip=socket.gethostbyname(domain)
+    #Port Scan Result
+    prt=port_scanning_active.Commonp_Scanner(ip) 
+
+    #Directory Enum Result
+    dir=directory_enumeration.direnum(url)
+    # subd=subdomain_enumeration_active.brute_subd(url)
+    # return 
+    return ip+'\n'+prt+'\n'+dir
+
+def passive(domain):
+    pasport=port_passive.scanner(domain)
+    passervdis=pserv.serv_pas(domain)
+    wi=wdg.whois_inp(domain)
+    dns=wdg.dns_info(domain)
+    return 'Ports: \n'+pasport+'\nServices \n'+passervdis+'\nWhois \n'+wi+'\nDNS Details: \n'+dns
+
+    
+
+
+
+
+
