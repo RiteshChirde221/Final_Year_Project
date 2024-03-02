@@ -15,10 +15,7 @@ set_default_color_theme("dark-blue")
 
 #Active Scan Output Function
 def active_scan_output():
-    try:
-        output=main.active(active_domain.get(), url.get(), port_num.get())
-    except BaseException:
-        output='Failed'
+    output=main.active(active_domain.get(), url.get(), port_num.get())
     output_frame = CTkScrollableFrame(master=tabview.tab("ACTIVE"), width=1000, height=500)
     output_frame.pack(padx=10,pady=10)
     o=CTkLabel(master=output_frame,text=output)

@@ -2,25 +2,16 @@ import requests
 
 
 restricted_paths = [
-    '/admin',
-    '/admin_panel',
-    '/control_panel',
-    '/config',
-    '/config_files',
-    '/logs',
-    '/error_logs',
-    '/temp',
-    '/temp_files',
-    '/cache',
-    '/cache_files',
-    '/backup',
-    '/backup_files',
-    '/uploads',
-    '/uploads_files',
-    '/source',
-    '/source_code',
-    '/restricted_pages',
-    '/restricted_functionalities'
+    'admin',
+    'admin_panel',
+    'userinfo.php',
+    'control_panel',
+    'config',
+    'config_files',
+    'logs',
+    'cart.php',
+    'error_logs',
+    'temp',
 ]
 
 
@@ -33,7 +24,7 @@ def direnum(url):
         if res.status_code==404:
             pass
         else:
-            dir_list.append(f'{i} should not be accessible remotely:{dirsearch}')
+            dir_list.append(f'{i} should not be accessible remotely:{dirsearch} \n')
     return ''.join(dir_list)
 
 # print(direnum('http://127.0.0.1:90'))
