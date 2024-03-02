@@ -1,5 +1,0 @@
-classroom
-gmail
-abcd
-dev
-docs

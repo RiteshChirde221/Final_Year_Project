@@ -4,16 +4,20 @@ from extra_tool import *
 import socket
 
 
-def active(domain,url):
+def active(domain,url,port_num):
+    # pas_ls=port_passive.scanner(domain)
     ip=socket.gethostbyname(domain)
     #Port Scan Result
-    prt=port_scanning_active.Commonp_Scanner(ip) 
+    res_prt=port_scanning_active.Commonp_Scanner(ip,port_num) 
+    return ip+'\n'+res_prt
+# print(auto_port_scan('127.0.0.1'))
 
-    #Directory Enum Result
-    dir=directory_enumeration.direnum(url)
-    # subd=subdomain_enumeration_active.brute_subd(url)
-    # return 
-    return ip+'\n'+prt+'\n'+dir
+
+
+
+#Directory Enum Result
+# dir=directory_enumeration.direnum(url)
+# subd=subdomain_enumeration_active.brute_subd(url)
 
 def passive(domain):
     pasport=port_passive.scanner(domain)

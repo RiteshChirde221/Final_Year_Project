@@ -1,7 +1,9 @@
 from nmap import *
 import socket
 
-prt=['21','22','23','80','443','8080','53','3306']
+
+res=[]
+prt=['90']
 def Scanner(ip,port):
     scanner=PortScanner()
     res=scanner.scan(ip,port)
@@ -12,13 +14,12 @@ def Scanner(ip,port):
     serv_version=scan_res[int(port)]['version']
     serv_extrainfo=scan_res[int(port)]['extrainfo']
     serv_cpe=scan_res[int(port)]['cpe']
-    return 'Port: '+port+'State: '+serv_state,'Name: '+serv_name+'Product: '+serv_product+'Version: '+serv_version+'ExtraInfo: '+serv_extrainfo+'CPE: '+serv_cpe
+    return 'Port: '+port+' '+serv_cpe[7:]+' running'
 
 def Scann(domain):
-    res=[]
     ip=socket.gethostbyname(domain)
     for port in prt:
         res.append(Scanner(ip,port))
-        return ' \n'.join(res)
-
+        return ''.join(map(str,res))
+# print(Scann('127.0.0.1'))
  
