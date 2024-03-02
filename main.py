@@ -5,11 +5,21 @@ import socket
 
 
 def active(domain,url,port_num):
-    # pas_ls=port_passive.scanner(domain)
     ip=socket.gethostbyname(domain)
+    
     #Port Scan Result
     res_prt=port_scanning_active.Commonp_Scanner(ip,port_num) 
-    return ip+'\n'+res_prt
+    
+    #Directory Enum
+    dir_enum = directory_enumeration.direnum(url)
+
+    #Subdomain Enum
+    subd=subdomain_enumeration_active.brute_subd(url)
+
+    #Service
+
+
+    return ip+'\n'+res_prt+'\n'+dir_enum+'\n'+subd
 # print(auto_port_scan('127.0.0.1'))
 
 

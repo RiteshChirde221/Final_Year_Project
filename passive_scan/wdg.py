@@ -3,17 +3,12 @@ import dns.resolver
 import requests
 import socket
 
+wi_dl=[]
 #Whois Lookup
 def whois_inp(domain):
-    try:
-        w= whois.whois(domain)
-    #Whois Data List
-        if w.name_servers or w.email ==None:
-           wi_dl=['Error']
-        else:
-            wi_dl=["Name Servers: {}".format('  '.join(map(str,w.name_servers))),"Email: {}".format(w.email)]
-    except OSError:
-        wi_dl=['Connection Error']
+    w= whois.whois(domain)
+        #Whois Data List
+    wi_dl=["Discovered Name Servers from whois are : {}".format('\n'.join(map(str,w.name_servers)))+' ,check for forbidden nameservers and hide them.',"Emails discovered are: {}".format(w.email)+' ,check for forbidden email and hide them.']
     return '\n'+' \n'.join(map(str,wi_dl))
 # print(whois_inp('google.com'))
 
@@ -26,13 +21,14 @@ def dns_info(domain):
     except BaseException:
         di_dl.append('A record Connection Error or Not Found')      
     try:
+        di_dl.append("Nameserver found in ns record are ")
         for ns in dns.resolver.resolve(domain,'NS'):
             di_dl.append(ns.to_text()) 
     except BaseException:
         di_dl.append('NS Record Connection Error or Not Found')
     try:
         for mx in dns.resolver.resolve(domain,'MX'):
-            di_dl.append(f'Check the mail that should not be accessible or visible to normal users in the above list and disable it \n {mx.to_text()}') 
+            di_dl.append(f'Check the mail that should not be accessible or visible to normal users in the above list and disable it: \n {mx.to_text()}') 
     except BaseException:
         di_dl.append('MX record Connection Error or Not Found')
     
