@@ -1,7 +1,6 @@
 import whois
 import dns.resolver
-import requests
-import socket
+
 
 wi_dl=[]
 #Whois Lookup
