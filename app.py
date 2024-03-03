@@ -1,6 +1,5 @@
 from customtkinter import *
 import main
-import socket
 
 #Cretate window
 app=CTk()
@@ -37,7 +36,6 @@ def pas_scan_res():
     # print(output)
 
 
-
 #Heading 
 heading=CTkLabel(master=app,text="Directing System Management Decision \n Making using Forensic Analysis of Web Applicaton",font=("Arial Black",24))
 heading.pack(pady=20,padx=10)
@@ -60,7 +58,6 @@ port_num=CTkEntry(master=tabview.tab("ACTIVE"), placeholder_text='Port number as
 port_num.pack(pady=10)
 active_button = CTkButton(master=tabview.tab("ACTIVE"),text="Start Scan",height=50,width=100,font=("Arial Black",18),command=active_scan_output)
 active_button.pack(padx=20, pady=20)
-
 
 
 #Passive Scan Tab

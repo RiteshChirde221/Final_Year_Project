@@ -27,4 +27,4 @@ def direnum(url):
             dir_list.append(f'{i} should not be accessible remotely:{dirsearch} \n')
     return ''.join(dir_list)
 
-# print(direnum('http://127.0.0.1:90'))
+

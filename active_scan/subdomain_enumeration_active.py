@@ -42,4 +42,4 @@ def brute_subd(url):
                 pass
     return ''.join(sub_list)
                     
-print(brute_subd('http://vulnweb.com/'))
+

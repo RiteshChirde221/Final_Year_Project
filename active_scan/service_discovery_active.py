@@ -3,7 +3,6 @@ import socket
 
 
 res=[]
-prt=['90']
 def Scanner(ip,port):
     scanner=PortScanner()
     res=scanner.scan(ip,port)
@@ -14,12 +13,13 @@ def Scanner(ip,port):
     serv_version=scan_res[int(port)]['version']
     serv_extrainfo=scan_res[int(port)]['extrainfo']
     serv_cpe=scan_res[int(port)]['cpe']
-    return 'Port: '+port+' '+serv_cpe[7:]+' running'
+    return serv_cpe[7:]
 
-def Scann(domain):
+def Scann(domain,prt):
     ip=socket.gethostbyname(domain)
     for port in prt:
         res.append(Scanner(ip,port))
         return ''.join(map(str,res))
-# print(Scann('127.0.0.1'))
+
+
  

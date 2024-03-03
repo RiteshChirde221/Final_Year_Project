@@ -15,16 +15,9 @@ def scanner(domain):
         for ports in results['events']:
             s.add(ports['target']['port'])
         for port in s:
-            p=f"Port {port} is open not filtered by firewall.\n Check with active scan to confirm"
+            p=f"Port {port} is open not filtered by firewall. Check with active scan to confirm"
             portls.append(p)
     except OSError:
         portls.append('Connection Error')
-    return '\n '.join(portls)
-# print(scanner('prmceam.ac.in'))
+    return '\n'.join(portls)
 
-#API connection
-#api=d0ee1761-6bb8-4b67-b463-51f9cc9a743e
-
-#API search limited to 250 
-#and pages to 1000
-# print(scanner('prmceam.ac.in'))

@@ -1,10 +1,12 @@
 from active_scan import port_scanning_active,directory_enumeration,service_discovery_active,subdomain_enumeration_active
-from passive_scan import port_passive, pserv, wdg
+from passive_scan import port_passive, wdg
 from extra_tool import *
 import socket
 
 
 def active(domain,url,port_num):
+
+    #IP Addr
     ip=socket.gethostbyname(domain)
     
     #Port Scan Result
@@ -16,25 +18,26 @@ def active(domain,url,port_num):
     #Subdomain Enum
     subd=subdomain_enumeration_active.brute_subd(url)
 
-    #Service
+    #Service Discovery
+    serv_act=service_discovery_active.Scann(domain,port_num)
+
+    return "IP Address of Domain: "+ip+'\n'+"Port Scan Result: \n"+res_prt+'\n'+'\n'+"Service Scan Result: \n"+serv_act+'\nCheck for vulnerabilities in the version.'+'\n'+"Confidential Directory lookup: \n"+dir_enum+'\n'+"Confidential Subdomain lookup: "+subd
 
 
-    return ip+'\n'+res_prt+'\n'+dir_enum+'\n'+subd
-# print(auto_port_scan('127.0.0.1'))
 
 
-
-
-#Directory Enum Result
-# dir=directory_enumeration.direnum(url)
-# subd=subdomain_enumeration_active.brute_subd(url)
 
 def passive(domain):
+
+    #Port Scan
     pasport=port_passive.scanner(domain)
-    passervdis=pserv.serv_pas(domain)
+
+    #Whois and DNS
     wi=wdg.whois_inp(domain)
     dns=wdg.dns_info(domain)
-    return 'Ports: \n'+pasport+'\nServices \n'+passervdis+'\nWhois \n'+wi+'\nDNS Details: \n'+dns
+
+    return 'Ports: \n'+pasport+'\n\nWhois '+wi+'\n\nDNS Details: \n'+dns
+
 
     
 

@@ -21,4 +21,4 @@ def Commonp_Scanner(ip,prt):
             res.append(f'Port {port} is open request not blocked by firewall, Configuring the firewall is nedded.')
     return ' \n '.join(res)
 
-# print(Commonp_Scanner('127.0.0.1','90'))
+
