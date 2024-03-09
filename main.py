@@ -19,9 +19,9 @@ def active(domain,url,port_num):
     subd=subdomain_enumeration_active.brute_subd(url)
 
     #Service Discovery
-    serv_act=service_discovery_active.Scann(domain,port_num)
+    serv_act=service_discovery_active.Serv_Scanner(domain,port_num)
 
-    return "IP Address of Domain: "+ip+'\n'+"Port Scan Result: \n"+res_prt+'\n'+'\n'+"Service Scan Result: \n"+serv_act+'\nCheck for vulnerabilities in the version.'+'\n'+"Confidential Directory lookup: \n"+dir_enum+'\n'+"Confidential Subdomain lookup: "+subd
+    return "IP Address of Domain: "+ip+'\n\n'+"Port Scan Result: \n"+res_prt+'\n'+'\n'+"Service Scan Result: \n"+serv_act+'\nCheck for vulnerabilities in the version.'+'\n'+"\nConfidential Directory lookup: \n"+dir_enum+'\n'+"\nConfidential Subdomain lookup: "+subd
 
 
 

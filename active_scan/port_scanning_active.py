@@ -1,5 +1,4 @@
 from nmap import *
-import socket
 
 def Scanner(ip,port):
     scanner=PortScanner()
@@ -13,12 +12,12 @@ def Scanner(ip,port):
 def Commonp_Scanner(ip,prt):
     res=[]
     for port in prt.split(','):
-        if Scanner(ip,port)=='filtered':
+        var=Scanner(ip,port)
+        if var=='filtered':
             res.append(f'Port {port} is filtered')
-        elif Scanner(ip,port)=='closed':
+        elif var=='closed':
             res.append(f'Port {port} is closed request is not blocked by firewall, Configuring the firewall is nedded')
-        elif Scanner(ip,port)=='open':
+        elif var=='open':
             res.append(f'Port {port} is open request not blocked by firewall, Configuring the firewall is nedded.')
     return ' \n '.join(res)
-
 

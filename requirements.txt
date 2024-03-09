@@ -1,7 +1,8 @@
 requests
-nmap
-socket
+python-nmap  
 pybinaryedge
-whois
-dns
+python-whois
+dnspython
 customtkinter
+
+

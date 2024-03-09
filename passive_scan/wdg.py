@@ -9,7 +9,7 @@ def whois_inp(domain):
         #Whois Data List
     wi_dl=["Discovered Name Servers from whois are : \n{}".format('\n'.join(map(str,w.name_servers)))+' ,\ncheck for forbidden nameservers and hide them.',"Emails discovered are: \n{}".format(w.email)+' ,\ncheck for forbidden email and hide them.']
     return '\n'+' \n'.join(map(str,wi_dl))
-# print(whois_inp('google.com'))
+
 
 #DNS Lookup
 def dns_info(domain):
@@ -33,5 +33,6 @@ def dns_info(domain):
         di_dl.append('MX record Connection Error or Not Found')
     
     return '\n'.join(di_dl)
+
 
 

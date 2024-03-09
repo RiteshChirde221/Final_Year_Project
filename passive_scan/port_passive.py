@@ -20,4 +20,3 @@ def scanner(domain):
     except OSError:
         portls.append('Connection Error')
     return '\n'.join(portls)
-
