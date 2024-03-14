@@ -1,7 +1,8 @@
 from active_scan import port_scanning_active,directory_enumeration,service_discovery_active,subdomain_enumeration_active
 from passive_scan import port_passive, wdg
-from extra_tool import *
+import sqlite3
 import socket
+from urllib.parse import urlparse
 
 
 def active(domain,url,port_num):
@@ -37,6 +38,23 @@ def passive(domain):
     dns=wdg.dns_info(domain)
 
     return 'Ports: \n'+pasport+'\n\nWhois '+wi+'\n\nDNS Details: \n'+dns
+
+def misc(username):
+    data=f"C:\/Users\/{username}\/AppData\/Local\/Microsoft\/Edge\/User Data\/Default\/History"
+    con=sqlite3.connect(data)
+    cur=con.cursor()
+    list_urls=cur.execute("SELECT * FROM urls ORDER BY ID DESC LIMIT 1")
+    all_urls=list_urls.fetchall()
+    list_elem=all_urls[0]
+    elem=list_elem[1]
+    last_url=''.join(elem)
+    dom=urlparse(last_url).netloc
+    return dom
+
+
+
+
+
 
 
     

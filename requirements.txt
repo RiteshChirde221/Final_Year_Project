@@ -4,5 +4,7 @@ pybinaryedge
 python-whois
 dnspython
 customtkinter
+urllib.parse
+sqlite3
 
 
