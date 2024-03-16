@@ -37,7 +37,7 @@ def passive(domain):
     wi=wdg.whois_inp(domain)
     dns=wdg.dns_info(domain)
 
-    return 'Ports: \n'+pasport+'\n\nWhois '+wi+'\n\nDNS Details: \n'+dns
+    return domain+'\n'+'Ports: \n'+pasport+'\n\nWhois '+wi+'\n\nDNS Details: \n'+dns
 
 def misc(username):
     data=f"C:\/Users\/{username}\/AppData\/Local\/Microsoft\/Edge\/User Data\/Default\/History"

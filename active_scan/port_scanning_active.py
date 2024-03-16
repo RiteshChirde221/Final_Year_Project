@@ -8,7 +8,6 @@ def Scanner(ip,port):
     return port_res
 
 
-
 def Commonp_Scanner(ip,prt):
     res=[]
     for port in prt.split(','):
