@@ -2,7 +2,7 @@ from customtkinter import *
 import main
 
 #Cretate window
-app=CTk()
+app=CTk() 
 app.geometry("1368x700")
 app.title("Directing System Management Decision Making using Forensic Analysis of Web Applicaton")
 #Icon Remaining
@@ -31,9 +31,8 @@ def pas_scan_res():
     # print(output)
 
 # def history_act_scan():
-#         try:
+#       
 #             output=main.active(active_domain.get(), url.get(), port_num.get())
-#         except BaseException:
 #             output='Failed'
 #         output_frame = CTkScrollableFrame(master=tabview.tab("MISC"), width=1000, height=500)
 #         output_frame.pack(padx=10,pady=10)
@@ -86,7 +85,7 @@ passve_button=CTkButton(master=tabview.tab("PASSIVE SCAN"),text="Start Scan",hei
 passve_button.pack()
 
 #MISC Tab
-username=CTkEntry(master=tabview.tab("MISC"),placeholder_text="Enter username of you computer",width=900,height=40,font=("Arial",18))
+username=CTkEntry(master=tabview.tab("MISC"),placeholder_text="Enter username of your computer",width=900,height=40,font=("Arial",18))
 username.pack(pady=10)
 # hist_act_btn=CTkButton(master=tabview.tab("MISC"),text="Start Active Scan",height=50,width=100,font=("Arial Black",18),command=history_act_scan)
 # hist_act_btn.pack()

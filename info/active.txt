@@ -1,6 +1,5 @@
 subdomain Enum done
 Directory Enum done
-Spidering
 nmap scan for port done
 and service 
 
