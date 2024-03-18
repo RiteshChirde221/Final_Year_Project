@@ -26,8 +26,6 @@ def active(domain,url,port_num):
 
 
 
-
-
 def passive(domain):
 
     #Port Scan
